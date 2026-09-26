@@ -1,0 +1,97 @@
+{
+  "config": {
+    "seed": 42,
+    "n_samples": 2000,
+    "n_reps": 10,
+    "n_splits": 4,
+    "test_size": 0.5,
+    "ci_alpha": 0.05,
+    "backend_pref": "auto",
+    "match_ratio": 3
+  },
+  "true_ate_target": 1.0,
+  "results": [
+    {
+      "dataset": "synthetic",
+      "true_ate": 1.0,
+      "n_samples": 2000,
+      "n_reps": 10,
+      "estimator": "naive",
+      "backend": "baseline",
+      "available": true,
+      "mean_ate": 1.887466703479006,
+      "bias": 0.887466703479006,
+      "rmse": 0.8918953698729959,
+      "coverage": 0.0,
+      "mean_ci_width": 0.329413434681035,
+      "ablation": ""
+    },
+    {
+      "dataset": "synthetic",
+      "true_ate": 1.0,
+      "n_samples": 2000,
+      "n_reps": 10,
+      "estimator": "ols",
+      "backend": "tier1",
+      "available": true,
+      "mean_ate": 1.7217520954661114,
+      "bias": 0.7217520954661114,
+      "rmse": 0.7217520954661115,
+      "coverage": 0.0,
+      "mean_ci_width": 0.3092703450704448,
+      "ablation": ""
+    },
+    {
+      "dataset": "synthetic",
+      "true_ate": 1.0,
+      "n_samples": 2000,
+      "n_reps": 10,
+      "estimator": "psm",
+      "backend": "tier1",
+      "available": true,
+      "mean_ate": 1.6640060167700834,
+      "bias": 0.6640060167700834,
+      "rmse": 0.6640060167700835,
+      "coverage": 0.0,
+      "mean_ci_width": 0.11108684776096833,
+      "ablation": ""
+    },
+    {
+      "dataset": "synthetic",
+      "true_ate": 1.0,
+      "n_samples": 2000,
+      "n_reps": 10,
+      "estimator": "gdml",
+      "backend": "lightgbm",
+      "available": true,
+      "mean_ate": 0.9551489384346935,
+      "bias": 0.044851061565306494,
+      "rmse": 0.044851061565306494,
+      "coverage": 1.0,
+      "mean_ci_width": 0.1486162988478009,
+      "ablation": ""
+    },
+    {
+      "dataset": "synthetic",
+      "true_ate": 1.0,
+      "n_samples": 2000,
+      "n_reps": 10,
+      "estimator": "gdml_nocv",
+      "backend": "lightgbm",
+      "available": true,
+      "mean_ate": 1.0178426578430275,
+      "bias": 0.01784265784302752,
+      "rmse": 0.0178426578430273,
+      "coverage": 1.0,
+      "mean_ci_width": 0.15157659887834685,
+      "ablation": "ablation: cross-fitting disabled"
+    }
+  ],
+  "backend_probe": {
+    "lightgbm": true,
+    "xgboost": true,
+    "econml": true,
+    "causal_forest_single_ate": 1.0806370325469863,
+    "causal_forest_single_se": 0.06066473599397048
+  }
+}

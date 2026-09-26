@@ -1,0 +1,20 @@
+# CausalForge — direct runtime dependencies
+# ------------------------------------------------------------------
+# Exact pins mirror requirements.lock.txt (full transitive freeze) so a
+# fresh install is byte-for-byte reproducible. Only the packages actually
+# imported by the code are declared here; the full closure lives in
+# requirements.lock.txt (pip freeze of the locked environment).
+#
+# Tier-0 SOTA backends (gradient-boosted DML):
+numpy==2.5.3
+scikit-learn==1.9.1      # KFold, HistGradientBoostingRegressor (fallback), LogisticRegression
+lightgbm==4.7.0          # preferred cross-fitted DML nuisance model
+xgboost==3.4.1           # alternative cross-fitted DML nuisance model
+
+# Optional SOTA backend: causal forest (EconML). Auto-skipped if absent.
+# Uncomment to enable the forest estimator in the benchmark probe.
+# econml==0.17.0
+
+# Development / CI tooling
+pytest==9.1.1
+ruff==0.16.9
