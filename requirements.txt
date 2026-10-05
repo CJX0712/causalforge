@@ -13,7 +13,7 @@ xgboost==3.4.1           # alternative cross-fitted DML nuisance model
 
 # Optional SOTA backend: causal forest (EconML). Auto-skipped if absent.
 # Uncomment to enable the forest estimator in the benchmark probe.
-# econml==0.17.0
+econml==0.17.0
 
 # Development / CI tooling
 pytest==9.1.1
